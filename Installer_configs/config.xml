@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>TIMP LR2</Name>
+    <Version>1.0.0</Version>
+    <Title>TIMP Installer</Title>
+    <Publisher>thevals</Publisher>
+    <StartMenuDir>TIMP</StartMenuDir>
+    <TargetDir>@HomeDir@/TIMP_LR2</TargetDir>
+</Installer>
