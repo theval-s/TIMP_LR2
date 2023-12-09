@@ -192,13 +192,15 @@ void MainWindow::start_uninstalling(){
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     //перехватываем закрытие приложения, чтобы записывать новые значения в реестр в случае полностью успешного выполнения
-    if (this->successful && !is_premium)
+    if (this->successful)
     {
         //Засчитываем использования только в случае успеха
+        QMessageBox::information(this, "Успех", is_premium? "Спасибо за использование премиум версии программы" : ("Осталось использований пробной версии: " + QString::number(save_num)));
+        if(!is_premium){
         QSettings settings("thevals", "TIMP LR2");
         int num = ((((save_num)+100)*4-3)*337);
         settings.setValue("Config", num);
-
+        }
     }
     event->accept();
 }
